@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:3000/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link rel="icon" href="http://localhost:3000/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Web site created using create-react-app">
+    <link rel="apple-touch-icon" href="http://localhost:3000/logo192.png">
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="http://localhost:3000/manifest.json">
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  <style>@import url(https://fonts.googleapis.com/css?family=Josefin+Sans);</style><style>@import url(https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap);</style><style>@import url(https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Indie+Flower&display=swap);</style><style>body{
+  margin: 0;
+  font-family: 'Indie Flower', cursive,'Comfortaa', cursive, sans-serif;
+  font-size: 18px;
+}
+
+input{
+  display: inline-block;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: rgb(2, 168, 21) solid 1px;
+}
+
+
+/* Main Header at registration */
+
+
+.header-footer-at-registration{
+  background: rgb(2, 168, 21);
+  margin-top:0;
+  padding: 20px;
+}
+
+/* Main Registration page */
+
+.registration-info-title{
+
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+#header-title, .registration-info-title,.footer-text{
+  text-align: center;
+}
+
+#registration-submit-btn{
+  display: block;
+  margin: 2em auto;
+}
+
+.registrationBody{
+  display: flex;
+}
+
+img{
+  width: 100%;
+  height: auto;
+  margin-top: 2.5em;
+}
+
+
+
+.column-1{
+  width: 50%;
+  /* border: 1px solid black; */
+}
+
+.column-2{
+  margin-top: 1em;
+  margin-left: 5em;
+  margin-right: 0;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
+  align-content: space-between;
+  /* border: 1px solid black; */
+}
+
+
+.registrationBody{
+  margin: 0 auto;
+  max-width: 90%;
+  /* border: 1px solid green; */
+}
+
+.info-container{
+  /* border: 1px solid green; */
+  width: 100%;
+}
+
+p,input{
+  font-size: 1.5rem;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9zcmMvaW5kZXguY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQU1BO0VBQ0UsU0FBUztFQUNULHFFQUFxRTtFQUNyRSxlQUFlO0FBQ2pCOztBQUVBO0VBQ0UscUJBQXFCO0VBQ3JCLGdCQUFnQjtFQUNoQixpQkFBaUI7RUFDakIsa0JBQWtCO0VBQ2xCLHdDQUF3QztBQUMxQzs7O0FBR0EsZ0NBQWdDOzs7QUFHaEM7RUFDRSwyQkFBMkI7RUFDM0IsWUFBWTtFQUNaLGFBQWE7QUFDZjs7QUFFQSwyQkFBMkI7O0FBRTNCOztFQUVFLGVBQWU7RUFDZixvQkFBb0I7QUFDdEI7O0FBRUE7RUFDRSxrQkFBa0I7QUFDcEI7O0FBRUE7RUFDRSxjQUFjO0VBQ2QsZ0JBQWdCO0FBQ2xCOztBQUVBO0VBQ0UsYUFBYTtBQUNmOztBQUVBO0VBQ0UsV0FBVztFQUNYLFlBQVk7RUFDWixpQkFBaUI7QUFDbkI7Ozs7QUFJQTtFQUNFLFVBQVU7RUFDViw2QkFBNkI7QUFDL0I7O0FBRUE7RUFDRSxlQUFlO0VBQ2YsZ0JBQWdCO0VBQ2hCLGVBQWU7RUFDZixVQUFVO0VBQ1YsYUFBYTtFQUNiLHNCQUFzQjtFQUN0QixxQkFBcUI7RUFDckIsNEJBQTRCO0VBQzVCLDZCQUE2QjtBQUMvQjs7O0FBR0E7RUFDRSxjQUFjO0VBQ2QsY0FBYztFQUNkLDZCQUE2QjtBQUMvQjs7QUFFQTtFQUNFLDZCQUE2QjtFQUM3QixXQUFXO0FBQ2I7O0FBRUE7RUFDRSxpQkFBaUI7QUFDbkIiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0IHVybCgnaHR0cHM6Ly9mb250cy5nb29nbGVhcGlzLmNvbS9jc3M/ZmFtaWx5PUpvc2VmaW4rU2FucycpO1xuQGltcG9ydCB1cmwoJ2h0dHBzOi8vZm9udHMuZ29vZ2xlYXBpcy5jb20vY3NzMj9mYW1pbHk9SW5kaWUrRmxvd2VyJmRpc3BsYXk9c3dhcCcpO1xuQGltcG9ydCB1cmwoJ2h0dHBzOi8vZm9udHMuZ29vZ2xlYXBpcy5jb20vY3NzMj9mYW1pbHk9Q29tZm9ydGFhOndnaHRANzAwJmZhbWlseT1JbmRpZStGbG93ZXImZGlzcGxheT1zd2FwJyk7XG5cblxuXG5ib2R5e1xuICBtYXJnaW46IDA7XG4gIGZvbnQtZmFtaWx5OiAnSW5kaWUgRmxvd2VyJywgY3Vyc2l2ZSwnQ29tZm9ydGFhJywgY3Vyc2l2ZSwgc2Fucy1zZXJpZjtcbiAgZm9udC1zaXplOiAxOHB4O1xufVxuXG5pbnB1dHtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBib3JkZXItdG9wOiBub25lO1xuICBib3JkZXItbGVmdDogbm9uZTtcbiAgYm9yZGVyLXJpZ2h0OiBub25lO1xuICBib3JkZXItYm90dG9tOiByZ2IoMiwgMTY4LCAyMSkgc29saWQgMXB4O1xufVxuXG5cbi8qIE1haW4gSGVhZGVyIGF0IHJlZ2lzdHJhdGlvbiAqL1xuXG5cbi5oZWFkZXItZm9vdGVyLWF0LXJlZ2lzdHJhdGlvbntcbiAgYmFja2dyb3VuZDogcmdiKDIsIDE2OCwgMjEpO1xuICBtYXJnaW4tdG9wOjA7XG4gIHBhZGRpbmc6IDIwcHg7XG59XG5cbi8qIE1haW4gUmVnaXN0cmF0aW9uIHBhZ2UgKi9cblxuLnJlZ2lzdHJhdGlvbi1pbmZvLXRpdGxle1xuXG4gIG1hcmdpbi10b3A6IDFlbTtcbiAgbWFyZ2luLWJvdHRvbTogMC41ZW07XG59XG5cbiNoZWFkZXItdGl0bGUsIC5yZWdpc3RyYXRpb24taW5mby10aXRsZSwuZm9vdGVyLXRleHR7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbn1cblxuI3JlZ2lzdHJhdGlvbi1zdWJtaXQtYnRue1xuICBkaXNwbGF5OiBibG9jaztcbiAgbWFyZ2luOiAyZW0gYXV0bztcbn1cblxuLnJlZ2lzdHJhdGlvbkJvZHl7XG4gIGRpc3BsYXk6IGZsZXg7XG59XG5cbmltZ3tcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogYXV0bztcbiAgbWFyZ2luLXRvcDogMi41ZW07XG59XG5cblxuXG4uY29sdW1uLTF7XG4gIHdpZHRoOiA1MCU7XG4gIC8qIGJvcmRlcjogMXB4IHNvbGlkIGJsYWNrOyAqL1xufVxuXG4uY29sdW1uLTJ7XG4gIG1hcmdpbi10b3A6IDFlbTtcbiAgbWFyZ2luLWxlZnQ6IDVlbTtcbiAgbWFyZ2luLXJpZ2h0OiAwO1xuICB3aWR0aDogNTAlO1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICAvKiBmbGV4LXdyYXA6IHdyYXA7ICovXG4gIGFsaWduLWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XG4gIC8qIGJvcmRlcjogMXB4IHNvbGlkIGJsYWNrOyAqL1xufVxuXG5cbi5yZWdpc3RyYXRpb25Cb2R5e1xuICBtYXJnaW46IDAgYXV0bztcbiAgbWF4LXdpZHRoOiA5MCU7XG4gIC8qIGJvcmRlcjogMXB4IHNvbGlkIGdyZWVuOyAqL1xufVxuXG4uaW5mby1jb250YWluZXJ7XG4gIC8qIGJvcmRlcjogMXB4IHNvbGlkIGdyZWVuOyAqL1xuICB3aWR0aDogMTAwJTtcbn1cblxucCxpbnB1dHtcbiAgZm9udC1zaXplOiAxLjVyZW07XG59Il0sInNvdXJjZVJvb3QiOiIifQ== */</style><style>
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsInNvdXJjZVJvb3QiOiIifQ== */</style><script charset="utf-8" src="./React App_files/main.f809db68003e173a1b53.hot-update.js"></script><script charset="utf-8" src="./React App_files/main.0ef99d946d8ce7669677.hot-update.js"></script><script charset="utf-8" src="./React App_files/main.c0d64f8689e4926d507c.hot-update.js"></script><script charset="utf-8" src="./React App_files/main.c28706f5c2907219c4b4.hot-update.js"></script><script charset="utf-8" src="./React App_files/main.1a7545a762d849661cbf.hot-update.js"></script><script charset="utf-8" src="./React App_files/main.2f29f92df67f87d23be5.hot-update.js"></script><script charset="utf-8" src="./React App_files/main.7241dc452d263c44ec03.hot-update.js"></script><script charset="utf-8" src="./React App_files/main.9189ed59e8314db249a3.hot-update.js"></script><script charset="utf-8" src="./React App_files/main.5ad2a27f06954a599da2.hot-update.js"></script><script charset="utf-8" src="./React App_files/main.d30f81ec601f9b40f8a8.hot-update.js"></script><script charset="utf-8" src="./React App_files/main.8b2ed5daa4358abdb535.hot-update.js"></script><script charset="utf-8" src="./React App_files/main.11bd6348519138e6716f.hot-update.js"></script><script charset="utf-8" src="./React App_files/main.fc9ce23196085e1ec739.hot-update.js"></script><script charset="utf-8" src="./React App_files/main.426036aac5a30f039fb5.hot-update.js"></script><script charset="utf-8" src="./React App_files/main.2d431252145a40ff0ca1.hot-update.js"></script><script charset="utf-8" src="./React App_files/main.c6e1c9dd13af5122fa40.hot-update.js"></script><script charset="utf-8" src="./React App_files/main.f6a85f0c72b919ad6a31.hot-update.js"></script><script charset="utf-8" src="./React App_files/main.1c1defdbbb681fdb2bce.hot-update.js"></script><script charset="utf-8" src="./React App_files/main.4919506527f69702cc19.hot-update.js"></script><script charset="utf-8" src="./React App_files/main.e351716317ee6e459a5a.hot-update.js"></script><script charset="utf-8" src="./React App_files/main.fd8f35b0a835f9d402a9.hot-update.js"></script><script charset="utf-8" src="./React App_files/main.cc23dc35d694c95f7d9c.hot-update.js"></script></head>
+  <body data-new-gr-c-s-check-loaded="14.995.0" data-gr-ext-installed="">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"><div class="App"><div><header class="header-footer-at-registration"><h1 id="header-title">KidShare Registration</h1></header><div><div class="registrationBody"><div class="column-1"><div class="parent-photo-row"><img src="./React App_files/photo-1.72a27738.jpg"></div></div><div class="column-2"><h1 class="registration-column-2-title">Basic Information</h1><div class="info-container"><p>First Name: <span><input></span></p><p>Last Name: <span><input></span></p><p>University: <span><input></span></p><p>Relationship to child: <span><input></span></p></div><div class="info-container"><div><h2 class="info-container-title">Address</h2></div><p>Street No. <span><input></span></p><p>Street name: <span><input></span></p><p>Apartment #: <span><input></span></p><p>Postal Code: <span><input></span></p><p>Country <span><input></span></p></div><div class="info-container"><h1>Contact Info</h1><p>Phone #: <span><input></span></p><p>Email: <span><input></span></p><p>Emergency phone #: <span><input></span></p></div><div class="info-container"><h1>Children</h1><p>First Name: <span><input></span></p><p>Gender: <span><input></span></p><p>Age: <span><input></span></p><p>Allergies: <span><input></span></p><p>Dietary Restrictions <span><input></span></p><button>Add Child</button><p>Additional Information: </p><input></div><div class="info-container"><p>Open to Accept Children: <span><input></span></p><p>Looking for a family: <span><input></span></p></div></div></div><div id="registration-submit-btn-wraper"><button id="registration-submit-btn">Submit</button></div></div><footer class="header-footer-at-registration"><h4 class="footer-text">KidShare Corp.</h4><p class="footer-text">All rights reserved</p></footer></div></div></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  <script src="./React App_files/bundle.js"></script><script src="./React App_files/vendors_main.chunk.js"></script><script src="./React App_files/main.chunk.js"></script>
+
+</body></html>
