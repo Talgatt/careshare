@@ -10,10 +10,8 @@ function Header(){
     </div>
     <div>
       <Link to="/profile">Profile</Link>
-      <Link to="/family-search">Search Family</Link>
-      <Link to="/register">Register Page</Link>
-      <Link to="/signin">Sign in Page</Link>
-      <Link to="/partner/:id">Partner Screen</Link>
+      {/* <Link to="/signin">Sign in Page</Link> */}
+      {/* <Link to="/partner/:id">Partner Screen</Link> */}
     </div>
   </header>)
 

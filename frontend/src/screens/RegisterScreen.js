@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { registerUser } from "../actions/userActions";
 import { useSelector, useDispatch } from "react-redux";
 import Footer from "./Footer";
@@ -96,6 +96,7 @@ export default function RegisterScreen(props) {
     }
   };
 
+
   const submitHandler = (e) => {
     e.preventDefault();
 
@@ -126,6 +127,8 @@ export default function RegisterScreen(props) {
         image,
       })
     );
+    props.history.push('/');
+    
   };
 
   return (

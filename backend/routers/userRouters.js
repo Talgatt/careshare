@@ -42,9 +42,11 @@ userRouter.post(
   "/signin",
   expressAsyncHandler(async (req, res) => {
     const user = await User.findOne({ email: req.body.email });
-
+    //console.log(req.body);
     if (user) {
-      if (bcrypt.compareSync(req.body.password, user.password)) {
+      
+      if (bcrypt.compare(req.body.password, user.password)) {
+        console.log('sending...')
         res.send({
           firstName: user.firstName,
           lastName: user.lastName,
@@ -73,6 +75,7 @@ userRouter.post(
           token: "token",
         });
       }
+      
     } else {
       res.status(401).send({ message: "User Not Found" });
     }

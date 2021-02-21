@@ -1,11 +1,37 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {Link}  from "react-router-dom";
+import {useDispatch, useSelector} from 'react-redux';
+import {signin} from '../actions/userActions';
 
+export default function SigninScreen(props) {
 
-export default function SigninScreen() {
+  const [email, setEmail] = useState("bka@google.com");
+  const [password, setPassword] = useState("123");
+
+  const userSignin = useSelector((state)=>state.userSignin);
+  //const {userInfo,error, loading} = userSignin;
+  console.log("userInfo fd");
+  console.log(userSignin);
+
+  const dispatch = useDispatch();
+
+  const submitHandler = (e) =>{
+    e.preventDefault();
+    console.log("userInfo fd");
+    console.log(userSignin);
+    dispatch(signin(email, password));
+  };
+  
+  useEffect(()=>{
+  //  if(userInfo){
+      
+     // props.history.push('/');
+    //}
+  },[]);
+
   return (<div className="signInPage">
 
-    <form>
+    <form onSubmit={submitHandler}>
 
     <div className="sign-in">
 
@@ -14,12 +40,12 @@ export default function SigninScreen() {
         
         <div className="signInUserName">
           <p>User Name: </p>
-          <input placeHolder="User Name ex. email address" />
+          <input placeholder="User Name ex. email address" />
         </div>
 
         <div className="signInUserPassword">
           <p>Password: </p>
-          <input placeHolder="Password" />
+          <input placeholder="Password" />
         </div>
 
       </div>

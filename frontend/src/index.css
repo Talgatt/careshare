@@ -242,6 +242,10 @@ input{
   height: 100vh;
 }
 
+input{
+  text-align: center;
+}
+
 .sign-in-btn{
   margin-top:0;
   margin-bottom: 1.2em;

@@ -11,7 +11,7 @@ export default function PartnerCard(props) {
       <div key={partner._id || partner.id} className="card">
         <div className="card-col-1">
           <a href={`/partner/${partner._id || partner.id}`}>
-            <img className="card-image" src={partner.image} />
+            <img className="card-image" src={partner.image} alt="Image Not Available"/>
           </a>
         </div>
         <div className="card-body">

@@ -7,7 +7,9 @@ import Header from "./Header";
 import Footer from "./Footer";
 
 export default function PartnerScreen(props) {
+  console.log('idishka', props)
   const partnerId = props.match.params.id;
+
 
   const partnerDetails = useSelector((state) => state.partnerDetails);
 
@@ -27,7 +29,8 @@ export default function PartnerScreen(props) {
       <h3>{partner && <div>{partner.firstName}</div>}</h3>
 
       <div className="userPersonalInfo">
-      <div className="userProfile-img"><img className="userProfileImage" src={TempPhoto} /></div>
+        {console.log(partner)}
+        <div className="userProfile-img"><img className="userProfileImage" src={partner.image} /></div>
       </div>
       <div><p>University</p></div>
       </div>

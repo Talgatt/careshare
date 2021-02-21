@@ -5,13 +5,16 @@ import {
   partnerDetailsReducer,
   partnerListReducer,
 } from "./reducers/partnerReducer";
-import { userListReducer, userRegisterReducer } from "./reducers/userReducers";
+import { userListReducer, userRegisterReducer, userSigninReducer } from "./reducers/userReducers";
 
 const initialState = {
   user: {
     userInfo: {},
   },
   userRegister: {},
+  userSignin: {
+    userInfo:null,
+  },
 
   partnerDetails: {
     partner: {},
@@ -19,9 +22,11 @@ const initialState = {
 };
 const reducer = combineReducers({
   userRegister: userRegisterReducer,
+  userSignin: userSigninReducer,
   userList: userListReducer,
   partnerDetails: partnerDetailsReducer,
   partnerList: partnerListReducer,
+  
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

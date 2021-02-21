@@ -5,6 +5,9 @@ import {
   USER_REGISTER_FAIL,
   USER_REGISTER_REQUEST,
   USER_REGISTER_SUCCESS,
+  USER_SIGNIN_FAIL,
+  USER_SIGNIN_REQUEST,
+  USER_SIGNIN_SUCCESS,
 } from "../constants/userConstants";
 import Axios from "axios";
 import axios from "axios";
@@ -36,7 +39,7 @@ export const registerUser = (data) => async (dispatch) => {
 
   try {
     console.log(data);
-    const { user } = Axios.post("/api/users/register", data);
+    const { user } = await Axios.post("/api/users/register", data);
     dispatch({
       type: USER_REGISTER_SUCCESS,
       payload: user,
@@ -48,3 +51,30 @@ export const registerUser = (data) => async (dispatch) => {
     });
   }
 };
+
+export const signin = (email, password) => async(dispatch) =>{
+
+  console.log("mail", email);
+  console.log("lalala");
+  dispatch({
+    type: USER_SIGNIN_REQUEST,
+    
+  });
+
+  try {
+    console.log("here");
+    console.log("password",password);
+    const data = await Axios.post("/api/users/signin", {email: "bka@google.com", password:"123"});
+  // console.log("data insight",data.data);
+    dispatch({
+      type: USER_SIGNIN_SUCCESS,
+      payload: data,
+    });
+  } catch (error) {
+   
+    dispatch({
+      type: USER_SIGNIN_FAIL,
+      payload: error,
+    });
+  }
+}
