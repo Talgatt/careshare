@@ -2,6 +2,7 @@ import express from "express";
 import expressAsyncHandler from "express-async-handler";
 import data from "../data.js";
 import User from "../models/userModel.js";
+import Partner from "../models/partnerModel.js";
 import bcrypt from "bcryptjs";
 
 const userRouter = express.Router();
