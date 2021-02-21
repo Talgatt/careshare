@@ -3,6 +3,7 @@ import { registerUser } from "../actions/userActions";
 import { useSelector, useDispatch } from "react-redux";
 
 import TempPhoto from "../Assets/images/photo-1.jpg";
+import axios from "axios";
 
 export default function RegisterScreen(props) {
   const addChild = () => {
@@ -51,6 +52,9 @@ export default function RegisterScreen(props) {
     userRegister.childAdditionalInformation
   );
   const [password, setPassword] = useState(userRegister.password);
+  const [image, setImage] = useState(userRegister.image);
+  const [loadingUpload, setLoadingUpload] = useState(false);
+  const [errorUpload, setErrorUpload] = useState("");
 
   const dispatch = useDispatch();
 
@@ -81,6 +85,23 @@ export default function RegisterScreen(props) {
         childAdditionalInformation,
       })
     );
+  };
+
+  const uploadFileHandler = async (e) => {
+    const file = e.target.files[0];
+    const bodyFormData = new FormData();
+    bodyFormData.append("image", file);
+    setLoadingUpload(true);
+
+    try {
+      const { data } = await axios("/api/uploads", bodyFormData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
+      setImage(data);
+      setLoadingUpload(false);
+    } catch (error) {
+      setErrorUpload(error.message);
+    }
   };
   return (
     <div>
@@ -382,6 +403,31 @@ export default function RegisterScreen(props) {
                     onChange={(e) => {
                       setChildDietaryRestrictions(e.target.value);
                     }}
+                  />
+                </span>
+              </p>
+
+              <p>
+                Image{" "}
+                <span>
+                  <input
+                    type="text"
+                    value={image}
+                    id="image"
+                    onChange={(e) => {
+                      setImage(e.target.value);
+                    }}
+                  />
+                </span>
+              </p>
+              <p>
+                Image File:
+                <span>
+                  <input
+                    type="file"
+                    id="imageFile"
+                    label="Choose Image"
+                    onChange={uploadFileHandler}
                   />
                 </span>
               </p>

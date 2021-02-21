@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import userRouter from "./routers/userRouters.js";
 import partnerRouter from "./routers/partnerRouter.js";
 import expressAsyncHandler from "express-async-handler";
+import uploadRouter from "./routers/uploadRouter.js";
 
 dotenv.config();
 
@@ -19,6 +20,7 @@ mongoose.connect("mongodb://localhost/kidshare", {
   useUnifiedTopology: true,
 });
 
+app.use("/api/uploads", uploadRouter);
 app.use("/api/users", userRouter);
 app.use("/api/partners", partnerRouter);
 
