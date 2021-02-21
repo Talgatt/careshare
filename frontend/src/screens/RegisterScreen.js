@@ -55,11 +55,49 @@ export default function RegisterScreen(props) {
   const [image, setImage] = useState(userRegister.image);
   const [loadingUpload, setLoadingUpload] = useState(false);
   const [errorUpload, setErrorUpload] = useState("");
+  const [fileName, setFileName] = useState("");
 
   const dispatch = useDispatch();
 
+  // const uploadFileHandler = async (e) => {
+  //   const file = e.target.files[0];
+  //   const bodyFormData = new FormData();
+  //   bodyFormData.append("image", file);
+  //   setLoadingUpload(true);
+
+  //   try {
+  //     const { data } = await axios.post("/api/uploads", bodyFormData, {
+  //       headers: { "Content-Type": "multipart/form-data" },
+  //     });
+  //     setImage(data);
+  //     setLoadingUpload(false);
+  //   } catch (error) {
+  //     setErrorUpload(error.message);
+  //     setLoadingUpload(false);
+  //   }
+  // };
+
+  const saveImage = async () => {
+    const bodyFormData = new FormData();
+    bodyFormData.append("image", fileName);
+    setLoadingUpload(true);
+
+    try {
+      const { data } = await axios.post("/api/uploads", bodyFormData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
+      setImage(data);
+      setLoadingUpload(false);
+    } catch (error) {
+      setErrorUpload(error.message);
+      setLoadingUpload(false);
+    }
+  };
+
   const submitHandler = (e) => {
     e.preventDefault();
+
+    saveImage(image);
 
     dispatch(
       registerUser({
@@ -83,26 +121,11 @@ export default function RegisterScreen(props) {
         childAllergies,
         childDietaryRestrictions,
         childAdditionalInformation,
+        image,
       })
     );
   };
 
-  const uploadFileHandler = async (e) => {
-    const file = e.target.files[0];
-    const bodyFormData = new FormData();
-    bodyFormData.append("image", file);
-    setLoadingUpload(true);
-
-    try {
-      const { data } = await axios("/api/uploads", bodyFormData, {
-        headers: { "Content-Type": "multipart/form-data" },
-      });
-      setImage(data);
-      setLoadingUpload(false);
-    } catch (error) {
-      setErrorUpload(error.message);
-    }
-  };
   return (
     <div>
       <form onSubmit={submitHandler}>
@@ -427,7 +450,8 @@ export default function RegisterScreen(props) {
                     type="file"
                     id="imageFile"
                     label="Choose Image"
-                    onChange={uploadFileHandler}
+                    //onChange={uploadFileHandler}
+                    onChange={(e) => setFileName(e.target.files[0])}
                   />
                 </span>
               </p>

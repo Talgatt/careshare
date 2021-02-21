@@ -81,6 +81,30 @@ userRouter.post(
 userRouter.post(
   "/register",
   expressAsyncHandler(async (req, res) => {
+    const partner = new Partner({
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      email: req.body.email,
+
+      university: req.body.university,
+      relationship: req.body.relationship,
+      addressStreetName: req.body.addressStreetName,
+
+      addressCountry: req.body.addressCountry,
+      addressPO: req.body.addressPO,
+      phone: req.body.phone,
+
+      childFirstName: req.body.childFirstName,
+      childLastName: req.body.childLastName,
+      childGender: req.body.childGender,
+      childAge: req.body.childAge,
+      childAllergies: req.body.childAllergies,
+      childDietaryRestrictions: req.body.childDietaryRestrictions,
+      childAdditionalInformation: req.body.childAdditionalInformation,
+      image: req.body.image,
+    });
+    const createPartner = await partner.save();
+
     const user = new User({
       firstName: req.body.firstName,
       lastName: req.body.lastName,
@@ -110,30 +134,6 @@ userRouter.post(
     });
 
     const createUser = await user.save();
-
-    const partner = new Partner({
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
-      email: req.body.email,
-
-      university: req.body.university,
-      relationship: req.body.relationship,
-      addressStreetName: req.body.addressStreetName,
-
-      addressCountry: req.body.addressCountry,
-      addressPO: req.body.addressPO,
-      phone: req.body.phone,
-
-      childFirstName: req.body.childFirstName,
-      childLastName: req.body.childLastName,
-      childGender: req.body.childGender,
-      childAge: req.body.childAge,
-      childAllergies: req.body.childAllergies,
-      childDietaryRestrictions: req.body.childDietaryRestrictions,
-      childAdditionalInformation: req.body.childAdditionalInformation,
-      image: req.body.image,
-    });
-    const createPartner = await partner.save();
 
     res.send({
       firstName: createUser.firstName,
