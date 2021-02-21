@@ -3,45 +3,85 @@ import { registerUser } from "../actions/userActions";
 import { useSelector, useDispatch } from "react-redux";
 
 import TempPhoto from "../Assets/images/photo-1.jpg";
+import { userRegisterReducer } from "../reducers/userRegisterReducer";
 
-export default function RegisterScreen() {
+export default function RegisterScreen(props) {
   const addChild = () => {
     console.log("Adding another child!: ");
   };
-  const user = useSelector((state) => state.user);
+  const userRegister = useSelector((state) => state.userRegister);
 
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [university, setUniversity] = useState("");
-  const [relationship, setRelationship] = useState("");
-  const [addressStreetName, setAddressStreetName] = useState("");
-  const [addressStreetNumber, setAddressStreetNumber] = useState("");
-  const [addressApt, setAddressApt] = useState("");
-  const [addressCountry, setAddressCountry] = useState("");
-  const [addressPO, setAddressPO] = useState("");
-  const [phone, setPhone] = useState("");
-  const [emergencyContact, setEmergencyContact] = useState("");
-  const [emergencyPhone, setEmergencyPhone] = useState("");
-  const [childFirstName, setChildFirstName] = useState("");
-  const [childLastName, setChildLastName] = useState("");
-  const [childGender, setChildGender] = useState("");
-  const [childAge, setChildAge] = useState("");
-  const [childAllergies, setChildAllergies] = useState("");
-  const [childDietaryRestrictions, setChildDietaryRestrictions] = useState("");
-  const [childAdditionalInformation, setChildAdditionalInformation] = useState(
-    ""
+  const [firstName, setFirstName] = useState(userRegister.firstName);
+  const [lastName, setLastName] = useState(userRegister.lastName);
+  const [email, setEmail] = useState(userRegister.email);
+  const [university, setUniversity] = useState(userRegister.email);
+  const [relationship, setRelationship] = useState(userRegister.relationship);
+  const [addressStreetName, setAddressStreetName] = useState(
+    userRegister.addressStreetName
   );
-  const [password, setPassword] = useState("");
+  const [addressStreetNumber, setAddressStreetNumber] = useState(
+    userRegister.addressStreetNumber
+  );
+  const [addressApt, setAddressApt] = useState(userRegister.setAddressApt);
+  const [addressCountry, setAddressCountry] = useState(
+    userRegister.addressCountry
+  );
+  const [addressPO, setAddressPO] = useState(userRegister.addressPO);
+  const [phone, setPhone] = useState(userRegister.phone);
+  const [emergencyContact, setEmergencyContact] = useState(
+    userRegister.emergencyContact
+  );
+  const [emergencyPhone, setEmergencyPhone] = useState(
+    userRegister.emergencyPhone
+  );
+  const [childFirstName, setChildFirstName] = useState(
+    userRegister.childFirstName
+  );
+  const [childLastName, setChildLastName] = useState(
+    userRegister.childLastName
+  );
+  const [childGender, setChildGender] = useState(userRegister.childGender);
+  const [childAge, setChildAge] = useState(userRegister.childAge);
+  const [childAllergies, setChildAllergies] = useState(
+    userRegister.childAllergies
+  );
+  const [childDietaryRestrictions, setChildDietaryRestrictions] = useState(
+    userRegister.childDietaryRestrictions
+  );
+  const [childAdditionalInformation, setChildAdditionalInformation] = useState(
+    userRegister.childAdditionalInformation
+  );
+  const [password, setPassword] = useState(userRegister.password);
 
-  const userInfo = { firstName, lastName, email, password };
-
-  const dispatch = useDispatch(userInfo);
+  const dispatch = useDispatch();
 
   const submitHandler = (e) => {
     e.preventDefault();
 
-    dispatch(registerUser(user));
+    dispatch(
+      registerUser({
+        firstName,
+        lastName,
+        email,
+        university,
+        relationship,
+        addressStreetName,
+        addressStreetNumber,
+        addressApt,
+        addressCountry,
+        addressPO,
+        phone,
+        emergencyContact,
+        emergencyPhone,
+        childFirstName,
+        childLastName,
+        childGender,
+        childAge,
+        childAllergies,
+        childDietaryRestrictions,
+        childAdditionalInformation,
+      })
+    );
   };
   return (
     <div>

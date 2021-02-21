@@ -86,7 +86,7 @@ userRouter.post(
       lastName: req.body.lastName,
       email: req.body.email,
 
-      password: bcrypt.hashSync(req.body.password, 7),
+      password: "123",
       isAdmin: false,
       university: req.body.university,
       relationship: req.body.relationship,
@@ -102,11 +102,13 @@ userRouter.post(
       childFirstName: req.body.childFirstName,
       childLastName: req.body.childLastName,
       childGender: req.body.childGender,
-      childAge: req.body.age,
+      childAge: req.body.childAge,
       childAllergies: req.body.childAllergies,
       childDietaryRestrictions: req.body.childDietaryRestrictions,
       childAdditionalInformation: req.body.childAdditionalInformation,
+      image: req.body.image,
     });
+
     const createUser = await user.save();
 
     res.send({
