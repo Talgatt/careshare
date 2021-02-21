@@ -1,17 +1,14 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Indie+Flower&display=swap");
 
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
-@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Indie+Flower&display=swap');
-
-
-
-body{
+body {
   margin: 0;
-  font-family: 'Indie Flower', cursive,'Comfortaa', cursive, sans-serif;
+  font-family: "Indie Flower", cursive, "Comfortaa", cursive, sans-serif;
   font-size: 18px;
 }
 
-input{
+input {
   display: inline-block;
   border-top: none;
   border-left: none;
@@ -19,51 +16,48 @@ input{
   border-bottom: rgb(2, 168, 21) solid 1px;
 }
 
-
 /* Main Header at registration */
 
-
-.header-footer-at-registration{
+.header-footer-at-registration {
   background: rgb(2, 168, 21);
-  margin-top:0;
+  margin-top: 0;
   padding: 20px;
 }
 
 /* Main Registration page */
 
-.registration-info-title{
-
+.registration-info-title {
   margin-top: 1em;
   margin-bottom: 0.5em;
 }
 
-#header-title, .registration-info-title,.footer-text{
+#header-title,
+.registration-info-title,
+.footer-text {
   text-align: center;
 }
 
-#registration-submit-btn{
+#registration-submit-btn {
   display: block;
   margin: 2em auto;
 }
 
-.registrationBody{
+.registrationBody {
   display: flex;
 }
 
-img{
+img {
   width: 100%;
   height: auto;
   margin-top: 2.5em;
 }
 
-
-
-.column-1{
+.column-1 {
   width: 50%;
   /* border: 1px solid black; */
 }
 
-.column-2{
+.column-2 {
   margin-top: 1em;
   margin-left: 5em;
   margin-right: 0;
@@ -75,18 +69,47 @@ img{
   /* border: 1px solid black; */
 }
 
-
-.registrationBody{
+.registrationBody {
   margin: 0 auto;
   max-width: 90%;
   /* border: 1px solid green; */
 }
 
-.info-container{
+.info-container {
   /* border: 1px solid green; */
   width: 100%;
 }
 
-p,input{
+p,
+input {
   font-size: 1.5rem;
+}
+
+/* Map */
+.full-container {
+  margin: -1rem;
+  height: calc(100% + 2rem);
+}
+.map-input-box {
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0.5rem auto;
+  width: 25rem;
+  height: 4rem;
+  display: flex;
+}
+.map-input-box input {
+  border-radius: 1rem 0 0 1rem;
+  border-right: 0;
+}
+.map-input-box button {
+  border-radius: 0 1rem 1rem 0;
+  border-left: 0;
+}
+
+.parent-height {
+  height: 500px;
+  width: 500px;
 }

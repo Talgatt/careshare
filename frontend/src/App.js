@@ -7,32 +7,19 @@ import RegisterScreen from "./screens/RegisterScreen";
 import SigninScreen from "./screens/SigninScreen";
 import PartnerCard from "./components/PartnerCard";
 import PartnerScreen from "./screens/PartnerScreen";
+import MapScreen from "./screens/MapScreen";
 function App() {
   return (
     <BrowserRouter>
-      <div className="grid-containter">
-        <header className="header-footer-at-registration">
-          <h1 id="header-title">KidShare Registration</h1>
-          <div>
-            <Link to="/">KIDSHARE</Link>
-          </div>
-          <div>
-            <Link to="/profile">Profile</Link>
-            <Link to="/family-search">Search Family</Link>
-          </div>
-        </header>
-
+      <div className="parent-height">
         <main>
           <Route path="/" component={HomeScreen} exact></Route>
           <Route path="/user/:id" component={ProfileScreen}></Route>
           <Route path="/register" component={RegisterScreen}></Route>
           <Route path="/signin" component={SigninScreen}></Route>
           <Route path="/partner/:id" component={PartnerScreen} />
+          <Route path="/map" component={MapScreen} />
         </main>
-        <footer className="header-footer-at-registration">
-          <h4 className="footer-text">KidShare Corp.</h4>
-          <p className="footer-text">All rights reserved</p>
-        </footer>
       </div>
     </BrowserRouter>
   );

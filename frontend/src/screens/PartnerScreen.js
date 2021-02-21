@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { detailsPartner } from "../actions/partnerActions";
+import MapScreen from "./MapScreen";
 
 export default function PartnerScreen(props) {
   const partnerId = props.match.params.id;
@@ -18,8 +19,11 @@ export default function PartnerScreen(props) {
   return (
     <div>
       Product HomeScreen
-      {partner && <div>{partner.firstName}</div>}
-      <div></div>
+      {partner && (
+        <div>
+          <MapScreen addressPO={partner.addressPO} />
+        </div>
+      )}
     </div>
   );
 }

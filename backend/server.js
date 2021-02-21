@@ -6,6 +6,7 @@ import partnerRouter from "./routers/partnerRouter.js";
 import expressAsyncHandler from "express-async-handler";
 import uploadRouter from "./routers/uploadRouter.js";
 import path from "path";
+import axios from "axios";
 
 dotenv.config();
 
@@ -24,6 +25,19 @@ mongoose.connect("mongodb://localhost/kidshare", {
 app.use("/api/users", userRouter);
 app.use("/api/partners", partnerRouter);
 app.use("/api/uploads", uploadRouter);
+
+app.get("/api/config/google", (req, res) => {
+  res.send(process.env.GOOGLE_API_KEY || "");
+});
+
+app.get("/api/config/geolocation/:addressPO", async (req, res) => {
+  const addressPO = req.params.addressPO;
+  const { data } = await axios.get(
+    `https://maps.googleapis.com/maps/api/geocode/json?key=${process.env.GOOGLE_API_KEY}&components=postal_code:${addressPO}`
+  );
+
+  res.send(data.results[0].geometry.location);
+});
 
 const __dirname = path.resolve();
 app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
