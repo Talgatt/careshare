@@ -1,7 +1,13 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { detailsPartner } from "../actions/partnerActions";
+
 import MapScreen from "./MapScreen";
+
+import TempPhoto from "../Assets/images/photo-1.jpg";
+
+import Header from "./Header";
+import Footer from "./Footer";
 
 export default function PartnerScreen(props) {
   const partnerId = props.match.params.id;
@@ -18,12 +24,27 @@ export default function PartnerScreen(props) {
 
   return (
     <div>
-      Product HomeScreen
-      {partner && (
-        <div>
-          <MapScreen addressPO={partner.addressPO} />
+      <Header />
+      <div className="main-container">
+        <h3>{partner && <div>{partner.firstName}</div>}</h3>
+
+        <div className="userPersonalInfo">
+          <div className="userProfile-img">
+            <img className="userProfileImage" src={TempPhoto} />
+          </div>
         </div>
-      )}
+        <div>
+          <p>University</p>
+        </div>
+        <div>
+          {partner && (
+            <div>
+              <MapScreen addressPO={partner.addressPO} />
+            </div>
+          )}
+        </div>
+      </div>
+      <Footer />
     </div>
   );
 }

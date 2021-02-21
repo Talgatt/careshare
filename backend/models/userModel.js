@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema(
   {
-    firstName: { type: String },
+    firstName: { type: String, required: true },
     lastName: { type: String, required: true },
     email: { type: String, required: true, unique: true },
     image: { type: String },
@@ -12,7 +12,7 @@ const userSchema = new mongoose.Schema(
     relationship: { type: String, required: true },
     addressStreetName: { type: String, required: true },
     addressStreetNumber: { type: String, required: true },
-    addressApt: { type: String, required: true },
+    addressApt: { type: String},
     addressCountry: { type: String, required: true },
     addressPO: { type: String, required: true },
     phone: { type: String, required: true },

@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { registerUser } from "../actions/userActions";
 import { useSelector, useDispatch } from "react-redux";
+import Footer from "./Footer";
 
 import TempPhoto from "../Assets/images/photo-1.jpg";
 import axios from "axios";
 
 export default function RegisterScreen(props) {
+
   const addChild = () => {
     console.log("Adding another child!: ");
   };
@@ -127,382 +129,303 @@ export default function RegisterScreen(props) {
   };
 
   return (
+
     <div>
       <form onSubmit={submitHandler}>
-        <div className="registrationBody">
-          <div className="column-1">
-            <div className="parent-photo-row">
-              <img src={TempPhoto} />
-            </div>
-          </div>
 
-          <div className="column-2">
-            <h1 className="registration-column-2-title">Basic Information</h1>
-            <div className="info-container">
-              <p>
-                First Name:{" "}
-                <span>
-                  <input
-                    type="text"
-                    value={firstName}
-                    id="firstName"
-                    onChange={(e) => {
-                      setFirstName(e.target.value);
-                    }}
-                  />
-                </span>
-              </p>
-              <p>
-                Last Name:{" "}
-                <span>
-                  <input
-                    type="text"
-                    value={lastName}
-                    id="lastName"
-                    onChange={(e) => {
-                      setLastName(e.target.value);
-                    }}
-                  />
-                </span>
-              </p>
+        <header>
+          <h1>Welcome to CareShare Registration page!</h1>
+        </header>
 
-              <p>
-                Email:{" "}
-                <span>
-                  <input
-                    type="text"
-                    value={email}
-                    id="email"
-                    onChange={(e) => {
-                      setEmail(e.target.value);
-                    }}
-                  />
-                </span>
-              </p>
+        <div className="main-container">
 
-              <p>
-                Password:{" "}
-                <span>
-                  <input
-                    type="password"
-                    value={password}
-                    id="password"
-                    onChange={(e) => {
-                      setPassword(e.target.value);
-                    }}
-                  />
-                </span>
-              </p>
-              <p>
-                University:{" "}
-                <span>
-                  <input
-                    type="text"
-                    value={university}
-                    id="university"
-                    onChange={(e) => {
-                      setUniversity(e.target.value);
-                    }}
-                  />
-                </span>
-              </p>
+          <div className="parent-information">
+            <h2>Parent Information</h2>
 
-              <p>
-                Relationship to child:{" "}
-                <span>
-                  <input
-                    type="text"
-                    value={relationship}
-                    id="relationship"
-                    onChange={(e) => {
-                      setRelationship(e.target.value);
-                    }}
-                  />
-                </span>
-              </p>
-            </div>
+            <div className="parent-name adjusting-divs">
 
-            <div className="info-container">
-              <div>
-                <h2 className="info-container-title">Address</h2>
-              </div>
-
-              <p>
-                Street No.{" "}
-                <span>
-                  <input
-                    type="text"
-                    value={addressStreetNumber}
-                    id="addressStreetNumber"
-                    onChange={(e) => {
-                      setAddressStreetNumber(e.target.value);
-                    }}
-                  />
-                </span>
-              </p>
-
-              <p>
-                Street name:{" "}
-                <span>
-                  <input
-                    type="text"
-                    value={addressStreetName}
-                    id="addressStreetName"
-                    onChange={(e) => {
-                      setAddressStreetName(e.target.value);
-                    }}
-                  />
-                </span>
-              </p>
-
-              <p>
-                Apartment #:{" "}
-                <span>
-                  <input
-                    type="text"
-                    value={addressApt}
-                    id="addressApt"
-                    onChange={(e) => {
-                      setAddressApt(e.target.value);
-                    }}
-                  />
-                </span>
-              </p>
-
-              <p>
-                Postal Code:{" "}
-                <span>
-                  <input
-                    type="text"
-                    value={addressPO}
-                    id="addressPO"
-                    onChange={(e) => {
-                      setAddressPO(e.target.value);
-                    }}
-                  />
-                </span>
-              </p>
-
-              <p>
-                Country{" "}
-                <span>
-                  <input
-                    type="text"
-                    value={addressCountry}
-                    id="addressCountry"
-                    onChange={(e) => {
-                      setAddressCountry(e.target.value);
-                    }}
-                  />
-                </span>
-              </p>
-            </div>
-
-            <div className="info-container">
-              <h1>Contact Info</h1>
-
-              <p>
-                Phone #:{" "}
-                <span>
-                  <input
-                    type="text"
-                    value={phone}
-                    id="phone"
-                    onChange={(e) => {
-                      setPhone(e.target.value);
-                    }}
-                  />
-                </span>
-              </p>
-
-              <p>
-                Emergency contact:{" "}
-                <span>
-                  <input
-                    type="text"
-                    value={emergencyContact}
-                    id="emergencyContact"
-                    onChange={(e) => {
-                      setEmergencyContact(e.target.value);
-                    }}
-                  />
-                </span>
-              </p>
-
-              <p>
-                Emergency phone #:{" "}
-                <span>
-                  <input
-                    type="text"
-                    value={emergencyPhone}
-                    id="emergencyPhone"
-                    onChange={(e) => {
-                      setEmergencyPhone(e.target.value);
-                    }}
-                  />
-                </span>
-              </p>
-            </div>
-
-            <div className="info-container">
-              <h1>Children</h1>
-
-              <p>
-                First Name:{" "}
-                <span>
-                  <input
-                    type="text"
-                    value={childFirstName}
-                    id="childFirstName"
-                    onChange={(e) => {
-                      setChildFirstName(e.target.value);
-                    }}
-                  />
-                </span>
-              </p>
-
-              <p>
-                Last Name:{" "}
-                <span>
-                  <input
-                    type="text"
-                    value={childLastName}
-                    id="childLastName"
-                    onChange={(e) => {
-                      setChildLastName(e.target.value);
-                    }}
-                  />
-                </span>
-              </p>
-
-              <p>
-                Gender:{" "}
-                <span>
-                  <input
-                    type="text"
-                    value={childGender}
-                    id="childGender"
-                    onChange={(e) => {
-                      setChildGender(e.target.value);
-                    }}
-                  />
-                </span>
-              </p>
-              <p>
-                Age:{" "}
-                <span>
-                  <input
-                    type="text"
-                    value={childAge}
-                    id="childAge"
-                    onChange={(e) => {
-                      setChildAge(e.target.value);
-                    }}
-                  />
-                </span>
-              </p>
-
-              <p>
-                Allergies:{" "}
-                <span>
-                  <input
-                    type="text"
-                    value={childAllergies}
-                    id="childAllergies"
-                    onChange={(e) => {
-                      setChildAllergies(e.target.value);
-                    }}
-                  />
-                </span>
-              </p>
-
-              <p>
-                Dietary Restrictions{" "}
-                <span>
-                  <input
-                    type="text"
-                    value={childDietaryRestrictions}
-                    id="childDietaryRestrictions"
-                    onChange={(e) => {
-                      setChildDietaryRestrictions(e.target.value);
-                    }}
-                  />
-                </span>
-              </p>
-
-              <p>
-                Image{" "}
-                <span>
-                  <input
-                    type="text"
-                    value={image}
-                    id="image"
-                    onChange={(e) => {
-                      setImage(e.target.value);
-                    }}
-                  />
-                </span>
-              </p>
-              <p>
-                Image File:
-                <span>
-                  <input
-                    type="file"
-                    id="imageFile"
-                    label="Choose Image"
-                    //onChange={uploadFileHandler}
-                    onChange={(e) => setFileName(e.target.files[0])}
-                  />
-                </span>
-              </p>
-
-              <button onClick={addChild}>Add Child</button>
-              <p>Additional Information: </p>
               <input
                 type="text"
-                value={childAdditionalInformation}
-                id="childAdditionalInformation"
+                value={firstName}
+                placeholder="First Name"
+                id="firstName"
                 onChange={(e) => {
-                  setChildAdditionalInformation(e.target.value);
+                  setFirstName(e.target.value);
+                }}
+              />
+
+              <input
+                type="text"
+                placeholder="Last Name"
+                value={lastName}
+                id="lastName"
+                onChange={(e) => {
+                  setLastName(e.target.value);
+                }}
+              />
+
+            </div>
+
+            <div className="home-address">
+              <h3>Home Address</h3>
+              <div class="home-address-row1 adjusting-divs">
+
+                <input
+                  type="text"
+                  value={addressStreetNumber}
+                  placeholder="Street No."
+                  onChange={(e) => {
+                    setAddressStreetNumber(e.target.value);
+                  }}
+                />
+
+                <input
+                  type="text"
+                  value={addressStreetName}
+                  placeholder="Street Name"
+                  onChange={(e) => {
+                    setAddressStreetName(e.target.value);
+                  }}
+                />
+
+              </div>
+
+              <div className="home-address-row2 adjusting-divs">
+
+                <input
+                  type="text"
+                  value={addressPO}
+                  placeholder="Postal Code"
+                  onChange={(e) => {
+                    setAddressPO(e.target.value);
+                  }}
+                />
+
+                <input
+                  type="text"
+                  value={addressCountry}
+                  placeholder="Province"
+                  onChange={(e) => {
+                    setAddressCountry(e.target.value);
+                  }}
+                />
+              </div>
+            </div>
+
+            <h3>Select Your University</h3>
+            <div className="parent-university adjusting-divs">
+
+
+              <input
+                type="text"
+                value={university}
+                placeholder="ex. University of UBC"
+                onChange={(e) => {
+                  setUniversity(e.target.value);
                 }}
               />
             </div>
 
-            <div className="info-container">
-              <p>
-                Open to Accept Children:{" "}
-                <span>
-                  <input
-                    type="text"
-                    value={childGender}
-                    id="childGender"
-                    onChange={(e) => {
-                      setChildGender(e.target.value);
-                    }}
-                  />
-                </span>
-              </p>
 
-              <p>
-                Looking for a family:{" "}
-                <span>
-                  <input
-                    type="text"
-                    value={childGender}
-                    id="childGender"
-                    onChange={(e) => {
-                      setChildGender(e.target.value);
-                    }}
-                  />
-                </span>
-              </p>
+            <h3>Contact Information</h3>
+            <div className="parent-contact-ifo adjusting-divs">
+
+              <input
+                type="text"
+                value={email}
+                placeholder="Email"
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
+              />
+
+              <input
+                type="text"
+                value={phone}
+                placeholder="Phone Number"
+                onChange={(e) => {
+                  setPhone(e.target.value);
+                }}
+              />
+
             </div>
-          </div>
-        </div>
 
-        <div id="registration-submit-btn-wraper">
-          <button id="registration-submit-btn">Submit</button>
+            <h3>Creating Password</h3>
+            <div className="parent-password adjusting-divs">
+
+              <input
+                type="password"
+                value={password}
+                placeholder="Create Password"
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
+              />
+            </div>
+
+
+            <div className="emergency-contact ">
+
+              <h3>Emergincy Contact Information</h3>
+              <div class="emergency-contact-info adjusting-divs">
+
+                <input
+                  type="text"
+                  value={emergencyContact}
+                  placeholder="Name"
+                  onChange={(e) => {
+                    setEmergencyContact(e.target.value);
+                  }}
+                />
+
+                <input
+                  type="text"
+                  value={emergencyPhone}
+                  placeholder="Phone Number"
+                  onChange={(e) => {
+                    setEmergencyPhone(e.target.value);
+                  }}
+                />
+
+              </div>
+
+              <div className="emergency-contact-relation adjusting-divs">
+                <input
+                  type="text"
+                  value={relationship}
+                  placeholder="Relation to Family"
+                  onChange={(e) => {
+                    setRelationship(e.target.value);
+                  }}
+                />
+
+              </div>
+
+            </div>
+
+            <form className="adding-margins-to-form">
+              <div className="form-group ">
+                <label for="exampleFormControlFile1"><h3>Upload Photo for Profile</h3></label>
+                <input type="file" class="form-control-file" id="exampleFormControlFile1"
+                  onChange={(e) => setFileName(e.target.files[0])}
+                />
+              </div>
+            </form>
+
+
+          </div>
+
+          <div className="child-information ">
+
+            <h2>Child Information</h2>
+
+            <div className="child-name adjusting-divs">
+
+              <input
+                type="text"
+                value={childFirstName}
+                placeholder="Child First Name"
+                onChange={(e) => {
+                  setChildFirstName(e.target.value);
+                }}
+              />
+
+              <input
+                type="text"
+                value={childLastName}
+                placeholder="Child Last Name"
+                onChange={(e) => {
+                  setChildLastName(e.target.value);
+                }}
+              />
+
+            </div>
+
+
+            <div className="adjusting-divs">
+
+              <input
+                type="text"
+                value={childGender}
+                placeholder="Child Gender"
+                onChange={(e) => {
+                  setChildGender(e.target.value);
+                }}
+              />
+
+              <input
+                type="text"
+                value={childAge}
+                placeholder="Child Age"
+                onChange={(e) => {
+                  setChildAge(e.target.value);
+                }}
+              />
+            </div>
+
+            <div className="adjusting-divs">
+
+
+              <input
+                type="text"
+                value={childAllergies}
+                id="childAllergies"
+                placeholder="Child Allergies if any"
+                onChange={(e) => {
+                  setChildAllergies(e.target.value);
+                }}
+              />
+
+
+            </div>
+
+            <div className="adjusting-divs">
+
+              <input
+                type="text"
+                value={childDietaryRestrictions}
+                id="childDietaryRestrictions"
+                placeholder="Child Dietary Restrictions"
+                onChange={(e) => {
+                  setChildDietaryRestrictions(e.target.value);
+                }}
+              />
+
+            </div>
+
+
+            <form className="adding-margins-to-form">
+              <div className="form-group ">
+                <label for="exampleFormControlFile1"><h3>Upload photo of your child</h3></label>
+                <input type="file" class="form-control-file" id="exampleFormControlFile1" />
+              </div>
+            </form>
+
+          </div>
+
+          <div className="add-child-btn">
+            <button onClick={addChild}><span id="addingMore-children"><i class="fas fa-plus"></i></span></button>
+          </div>
+
+          <h3>You can add more information down below </h3>
+          <div className="parent-moreInformation">
+
+            <input
+              type="text"
+              value={childAdditionalInformation}
+              id="childAdditionalInformation"
+              onChange={(e) => {
+                setChildAdditionalInformation(e.target.value);
+              }}
+            />
+          </div>
+
+          <div id="registration-submit-btn-wraper">
+            <button id="registration-submit-btn">Submit</button>
+          </div>
+
         </div>
+        <Footer/>
       </form>
     </div>
   );
