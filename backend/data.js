@@ -55,6 +55,52 @@ const data = {
       childAdditionalInformation: "likes to sing and swim",
     },
   ],
+
+  partners: [
+    {
+      firstName: "Talgat",
+      lastName: "Tul",
+      email: "tal@ualberta.ca",
+      image: "/images/p1.jpg",
+      university: "University of Alberta",
+      relationship: "mother",
+      addressStreetName: "Robson Street",
+
+      addressCountry: "Canada",
+      addressPO: "V6Y 1J3",
+      phone: "7802323232",
+
+      childFirstName: "Diana",
+      childLastName: "Tul",
+      childGender: "female",
+      childAge: 5,
+      childAllergies: "none",
+      childDietaryRestrictions: "none",
+      childAdditionalInformation: "like to play soccer",
+    },
+    {
+      firstName: "Timur ",
+      lastName: "Kanes",
+      email: "kanes@gmail.com",
+      image: "/images/p2.jpg",
+
+      university: "University of Alberta",
+      relationship: "mother",
+      addressStreetName: "Gibson street",
+
+      addressCountry: "Canada",
+      addressPO: "V7W 2V3",
+      phone: "780343433",
+
+      childFirstName: "Diana",
+      childLastName: "Tul",
+      childGender: "female",
+      childAge: 7,
+      childAllergies: "sun",
+      childDietaryRestrictions: "peenuts",
+      childAdditionalInformation: "likes to sing and swim",
+    },
+  ],
 };
 
 export default data;

@@ -3,7 +3,6 @@ import { registerUser } from "../actions/userActions";
 import { useSelector, useDispatch } from "react-redux";
 
 import TempPhoto from "../Assets/images/photo-1.jpg";
-import { userRegisterReducer } from "../reducers/userRegisterReducer";
 
 export default function RegisterScreen(props) {
   const addChild = () => {

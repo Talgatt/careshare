@@ -1,26 +1,28 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { listPartners } from "../actions/partnerActions";
 
 import { listUsers } from "../actions/userActions";
 import PartnerCard from "../components/PartnerCard";
-import UserCard from "../components/PartnerCard";
+import { partnerListReducer } from "../reducers/partnerReducer";
 
 export default function HomeScreen() {
-  const userList = useSelector((state) => state.userList);
-  const { users } = userList;
+  const partnerList = useSelector((state) => state.partnerList);
+  const { partners } = partnerList;
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(listUsers());
+    dispatch(listPartners());
   }, [dispatch]);
   return (
     <div>
       HomeScreen
       <div>
-        {console.log(users)}
-        {users &&
-          users.map((user) => <PartnerCard key={user._id} partner={user} />)}
+        {partners &&
+          partners.map((partner) => (
+            <PartnerCard key={partner._id} partner={partner} />
+          ))}
       </div>
     </div>
   );

@@ -2,8 +2,8 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import userRouter from "./routers/userRouters.js";
+import partnerRouter from "./routers/partnerRouter.js";
 import expressAsyncHandler from "express-async-handler";
-//import User from "./models/userModel";
 
 dotenv.config();
 
@@ -20,6 +20,7 @@ mongoose.connect("mongodb://localhost/kidshare", {
 });
 
 app.use("/api/users", userRouter);
+app.use("/api/partners", partnerRouter);
 
 app.get("/", (req, res) => {
   res.send("server running");

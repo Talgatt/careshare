@@ -1,6 +1,7 @@
 import React from "react";
 
 export default function PartnerCard(props) {
+  //console.log("props", props);
   const { partner } = props;
 
   return (
@@ -15,6 +16,7 @@ export default function PartnerCard(props) {
           </a>
 
           <div>{partner.lastName}</div>
+          <div>{partner._id}</div>
         </div>
       </div>
     </div>
