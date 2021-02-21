@@ -2,6 +2,7 @@ import express from "express";
 import expressAsyncHandler from "express-async-handler";
 import data from "../data.js";
 import User from "../models/userModel.js";
+import Partner from "../models/partnerModel.js";
 import bcrypt from "bcryptjs";
 
 const userRouter = express.Router();
@@ -81,12 +82,36 @@ userRouter.post(
 userRouter.post(
   "/register",
   expressAsyncHandler(async (req, res) => {
+    const partner = new Partner({
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      email: req.body.email,
+
+      university: req.body.university,
+      relationship: req.body.relationship,
+      addressStreetName: req.body.addressStreetName,
+
+      addressCountry: req.body.addressCountry,
+      addressPO: req.body.addressPO,
+      phone: req.body.phone,
+
+      childFirstName: req.body.childFirstName,
+      childLastName: req.body.childLastName,
+      childGender: req.body.childGender,
+      childAge: req.body.childAge,
+      childAllergies: req.body.childAllergies,
+      childDietaryRestrictions: req.body.childDietaryRestrictions,
+      childAdditionalInformation: req.body.childAdditionalInformation,
+      image: req.body.image,
+    });
+    const createPartner = await partner.save();
+
     const user = new User({
       firstName: req.body.firstName,
       lastName: req.body.lastName,
       email: req.body.email,
 
-      password: bcrypt.hashSync(req.body.password, 7),
+      password: "123",
       isAdmin: false,
       university: req.body.university,
       relationship: req.body.relationship,
@@ -102,11 +127,13 @@ userRouter.post(
       childFirstName: req.body.childFirstName,
       childLastName: req.body.childLastName,
       childGender: req.body.childGender,
-      childAge: req.body.age,
+      childAge: req.body.childAge,
       childAllergies: req.body.childAllergies,
       childDietaryRestrictions: req.body.childDietaryRestrictions,
       childAdditionalInformation: req.body.childAdditionalInformation,
+      image: req.body.image,
     });
+
     const createUser = await user.save();
 
     res.send({

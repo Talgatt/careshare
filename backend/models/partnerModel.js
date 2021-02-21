@@ -1,24 +1,20 @@
 import mongoose from "mongoose";
 
-const userSchema = new mongoose.Schema(
+const partnerSchema = new mongoose.Schema(
   {
-    firstName: { type: String },
+    firstName: { type: String, required: true },
     lastName: { type: String, required: true },
     email: { type: String, required: true, unique: true },
     image: { type: String },
-    password: { type: String, required: true },
-    isAdmin: { type: Boolean, default: false, required: true },
+
     university: { type: String, required: true },
     relationship: { type: String, required: true },
     addressStreetName: { type: String, required: true },
-    addressStreetNumber: { type: String, required: true },
-    addressApt: { type: String, required: true },
+
     addressCountry: { type: String, required: true },
     addressPO: { type: String, required: true },
     phone: { type: String, required: true },
-    emergencyContact: { type: String },
-    emergencyPhone: { type: String },
-    emergencyRelation: { type: String },
+
     childFirstName: { type: String, required: true },
     childLastName: { type: String, required: true },
     childGender: { type: String, required: true },
@@ -30,6 +26,6 @@ const userSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const User = mongoose.model("User", userSchema);
+const Partner = mongoose.model("Partner", partnerSchema);
 
-export default User;
+export default Partner;

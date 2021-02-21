@@ -5,8 +5,13 @@ import HomeScreen from "./screens/HomeScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import RegisterScreen from "./screens/RegisterScreen";
 import SigninScreen from "./screens/SigninScreen";
+
 import Footer from "./screens/Footer";
 import SearchScreen from "./screens/SearchScreen";
+
+
+import PartnerCard from "./components/PartnerCard";
+import PartnerScreen from "./screens/PartnerScreen";
 
 function App() {
   return (
@@ -17,7 +22,11 @@ function App() {
           <Route path="/profile" component={ProfileScreen}></Route>
           <Route path="/register" component={RegisterScreen}></Route>
           <Route path="/signin" component={SigninScreen}></Route>
+
           <Route path="/family-search" component={SearchScreen}></Route>
+
+          <Route path="/partner/:id" component={PartnerScreen} />
+
         </main>
       </div>
       <Footer/>
