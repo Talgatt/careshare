@@ -1,92 +1,193 @@
 
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
-@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Indie+Flower&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@800&display=swap');
 
 
 body{
-  margin: 0;
-  font-family: 'Indie Flower', cursive,'Comfortaa', cursive, sans-serif;
-  font-size: 18px;
+
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 16px;
+  background:#eaece5;
+  margin: 0 auto;
 }
 
-input{
-  display: inline-block;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom: rgb(2, 168, 21) solid 1px;
-}
-
-
-/* Main Header at registration */
-
-
-.header-footer-at-registration{
-  background: rgb(2, 168, 21);
-  margin-top:0;
-  padding: 20px;
-}
-
-/* Main Registration page */
-
-.registration-info-title{
-
-  margin-top: 1em;
-  margin-bottom: 0.5em;
-}
-
-#header-title, .registration-info-title,.footer-text{
+header, footer {
+  color:#fff;
+  background:#3b3a30;
   text-align: center;
 }
 
-#registration-submit-btn{
-  display: block;
-  margin: 2em auto;
+header{
+  padding: 1.2em;
+  margin-bottom: 2em;
 }
 
-.registrationBody{
-  display: flex;
-}
-
-img{
+footer{
+  padding: 1em;
+  margin-top: 2em;
+  /* position: absolute; */
   width: 100%;
-  height: auto;
-  margin-top: 2.5em;
+  /* bottom: 0; */
 }
 
-
-
-.column-1{
-  width: 50%;
-  /* border: 1px solid black; */
+.footer-text{
+  margin:0.3em;
 }
 
-.column-2{
-  margin-top: 1em;
-  margin-left: 5em;
-  margin-right: 0;
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  /* flex-wrap: wrap; */
-  align-content: space-between;
-  /* border: 1px solid black; */
-}
-
-
-.registrationBody{
+.registration-main{
+  max-width: 800px;
   margin: 0 auto;
-  max-width: 90%;
-  /* border: 1px solid green; */
+  padding: 10px;
+  box-shadow: 5px 10px 5px 10px #c0ded9;
+
 }
 
-.info-container{
-  /* border: 1px solid green; */
-  width: 100%;
+h3{
+  font-size: 1.1rem;
+ 
 }
 
-p,input{
+h2{
+  font-size: 1.3rem;
+}
+
+h1{
   font-size: 1.5rem;
+  font-weight: bold;
 }
+
+h3,h2,h1{
+  margin-top: 1em;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+input{
+  margin-right: 2em;
+  margin-bottom: 1.2em;;
+}
+
+.adjusting-divs{
+  display: flex;
+  justify-content: space-around;
+}
+
+#childAllergies, #childDietaryRestrictions{
+  width: 70%;
+}
+
+.adding-margins-to-form{
+  display: flex;
+  justify-content: center;
+}
+
+#addingMore-children{
+  color: #618685; 
+}
+
+.add-child-btn{
+
+  text-align: right;
+  margin-right: 2em;
+}
+
+#childAdditionalInformation{
+  width: 80%;
+  height: 6em;
+}
+
+.parent-moreInformation, #registration-submit-btn-wraper{
+  display: flex;
+  justify-content: center;
+
+}
+
+
+/* HOME SCREEN */
+
+.test{
+  height:100vh;
+
+}
+
+
+
+.card{
+  display: flex;
+  flex-direction: row;
+  max-width: 90%;
+  max-height: 200px;
+  margin: 2em auto;
+  background:#c0ded9;
+  border-radius: 10px;
+  flex-wrap: wrap;
+  border: 1px solid #3b3a30;
+}
+
+.card-image{
+  width: 90%;
+  height: 90%;
+  border-radius: 70%;
+
+  margin-top: 0.6rem;
+  margin-left: 1.5em;
+  margin-bottom: 1.3em;
+}
+
+.card-title{
+  margin:0 auto;
+  padding:0;
+  flex-wrap: wrap;
+}
+
+.card-title h3{
+  font-weight: 800;
+}
+
+.card-col-1{
+  width: 30%;
+  text-align: center;
+}
+
+.card-body{
+  display: flex; 
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-size-adjust: auto;
+  width: 60%;
+ 
+}
+
+.card-body h3{
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+.card-text{
+  display: flex;
+ 
+  flex-wrap: wrap;
+  width: 400px;
+  margin: 0 auto;
+  font-size: 1.02em;
+}
+
+.card-col-2{
+  margin-right: 2em;
+  margin-left: 3em;
+}
+
+.page-link{
+  color: black;
+  background:#c0ded9;
+  border: 1px solid #3b3a30;
+}
+
+
+/* #pagination-home{
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  margin-bottom: 0;
+} */
+
