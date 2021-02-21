@@ -12,7 +12,7 @@ const userSchema = new mongoose.Schema(
     relationship: { type: String, required: true },
     addressStreetName: { type: String, required: true },
     addressStreetNumber: { type: String, required: true },
-    addressApt: { type: String, required: true },
+    addressApt: { type: String},
     addressCountry: { type: String, required: true },
     addressPO: { type: String, required: true },
     phone: { type: String, required: true },

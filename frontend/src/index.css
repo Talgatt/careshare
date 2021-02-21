@@ -34,12 +34,12 @@ footer{
   margin:0.3em;
 }
 
-.registration-main{
+.main-container{
   max-width: 800px;
   margin: 0 auto;
   padding: 10px;
   box-shadow: 5px 10px 5px 10px #c0ded9;
-
+  min-height: 100vh;
 }
 
 h3{
@@ -60,6 +60,7 @@ h3,h2,h1{
   margin-top: 1em;
   margin-bottom: 1em;
   text-align: center;
+  font-weight: 800;
 }
 
 input{
@@ -125,13 +126,13 @@ input{
 }
 
 .card-image{
-  width: 90%;
-  height: 90%;
+  width: 170px;
+  height: 170px;
   border-radius: 70%;
 
   margin-top: 0.6rem;
-  margin-left: 1.5em;
-  margin-bottom: 1.3em;
+  margin-left: 1.5rem;
+  margin-bottom: 1.3rem;
 }
 
 .card-title{
@@ -165,16 +166,23 @@ input{
 
 .card-text{
   display: flex;
- 
-  flex-wrap: wrap;
-  width: 400px;
+  flex-direction: row;
+  /* flex-wrap: wrap; */
+  width: 100%;
   margin: 0 auto;
-  font-size: 1.02em;
+  font-size: 1em;
+
 }
 
 .card-col-2{
   margin-right: 2em;
-  margin-left: 3em;
+  margin-left: 1em;
+  width: 50%;
+}
+
+.card-col-3{
+  width: 50%;
+
 }
 
 .page-link{
@@ -191,3 +199,79 @@ input{
   margin-bottom: 0;
 } */
 
+/* Sign In Screen */
+
+.signInModal{
+
+  display: flex;
+  /* flex-direction: column; */
+  
+  justify-content: space-between;
+  margin-bottom: 0.2em;
+  padding: 1.2em;
+}
+
+.signInUserName, .signInUserPassword{
+ 
+  width: 45%;
+}
+
+.signInUserName input, .signInUserPassword input{
+  width: 100%;
+}
+
+
+.sign-in{
+  background: #b2c2bf;
+  max-width: 500px;
+  
+  position: absolute;
+  bottom: 40%;
+  text-align: center;
+  margin-left: 25%;
+  box-shadow: 5px 5px 5px 5px #3b3a30;
+
+}
+
+.createAccountTextwithLink{
+  text-align: center;
+}
+
+.signInPage{
+  background-color:#eaece5;
+  height: 100vh;
+}
+
+.sign-in-btn{
+  margin-top:0;
+  margin-bottom: 1.2em;
+  /* border-radius: 7px; */
+}
+
+.sign-in-btn:hover{
+  color: #c0ded9;
+}
+
+/* USER PROFILE PAGE */
+
+.userProfileImage{
+  width: 100%;
+  height: auto;
+}
+
+
+.userProfile-img{
+  margin-right: 3em;
+  width: 30%;
+}
+
+.userPersonalInfo{
+  display: flex;
+  margin-bottom: 2em;
+}
+
+.userAccount-info-text{
+
+  width: 65%;
+
+}

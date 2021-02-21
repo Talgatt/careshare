@@ -22,14 +22,12 @@ function App() {
           <Route path="/profile" component={ProfileScreen}></Route>
           <Route path="/register" component={RegisterScreen}></Route>
           <Route path="/signin" component={SigninScreen}></Route>
-
           <Route path="/family-search" component={SearchScreen}></Route>
-
           <Route path="/partner/:id" component={PartnerScreen} />
 
         </main>
       </div>
-      <Footer/>
+   
     </BrowserRouter>
        
   );

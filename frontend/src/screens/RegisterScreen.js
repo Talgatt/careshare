@@ -137,7 +137,7 @@ export default function RegisterScreen(props) {
           <h1>Welcome to CareShare Registration page!</h1>
         </header>
 
-        <div className="registration-main">
+        <div className="main-container">
 
           <div className="parent-information">
             <h2>Parent Information</h2>
@@ -215,7 +215,7 @@ export default function RegisterScreen(props) {
             <h3>Select Your University</h3>
             <div className="parent-university adjusting-divs">
 
-            
+
               <input
                 type="text"
                 value={university}
@@ -229,7 +229,7 @@ export default function RegisterScreen(props) {
 
             <h3>Contact Information</h3>
             <div className="parent-contact-ifo adjusting-divs">
-            
+
               <input
                 type="text"
                 value={email}
@@ -252,7 +252,7 @@ export default function RegisterScreen(props) {
 
             <h3>Creating Password</h3>
             <div className="parent-password adjusting-divs">
-         
+
               <input
                 type="password"
                 value={password}
@@ -306,7 +306,9 @@ export default function RegisterScreen(props) {
             <form className="adding-margins-to-form">
               <div className="form-group ">
                 <label for="exampleFormControlFile1"><h3>Upload Photo for Profile</h3></label>
-                <input type="file" class="form-control-file" id="exampleFormControlFile1" />
+                <input type="file" class="form-control-file" id="exampleFormControlFile1"
+                  onChange={(e) => setFileName(e.target.files[0])}
+                />
               </div>
             </form>
 
@@ -374,12 +376,12 @@ export default function RegisterScreen(props) {
                 }}
               />
 
-             
+
             </div>
 
             <div className="adjusting-divs">
 
-            <input
+              <input
                 type="text"
                 value={childDietaryRestrictions}
                 id="childDietaryRestrictions"
@@ -407,7 +409,7 @@ export default function RegisterScreen(props) {
 
           <h3>You can add more information down below </h3>
           <div className="parent-moreInformation">
- 
+
             <input
               type="text"
               value={childAdditionalInformation}
@@ -423,7 +425,7 @@ export default function RegisterScreen(props) {
           </div>
 
         </div>
-        {/* <Footer/> */}
+        <Footer/>
       </form>
     </div>
   );
